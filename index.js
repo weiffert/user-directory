@@ -3,5 +3,6 @@ button.addEventListener('click', changeText);
 
 function changeText() {
     const header = document.querySelectorAll('h1');
-    header[1].textContent = 'Why\'d you push that button?';
+    const text = document.querySelector('input');
+    header[1].textContent = text.value.length > 0 ? text.value : "Where's the text's";
 }
