@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>First</h1>
-    <h1>Second</h1>
-    <h1>Third</h1>
-
-    <form>
-        <input type="text">
-        <button type="button">Submit</button>
+    <h1>Current Directory</h1>
+    <ul>
+    </ul>
+    <form onsubmit="validateInput(); return false;">
+        <input type="text" placeholder="New folder">
+        <button type="button">Create</button>
     </form>
 
     <script src="index.js"></script>
