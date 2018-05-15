@@ -18,22 +18,24 @@ const renderListItem = function(content, color) {
     return item;
 }
 
-const handleSubmit = function (event) {
-    event.preventDefault();
-    const form = event.target;
+const renderList = function(form) {
     const users = document.querySelector('#users');
     const userName = form.userName.value;
     const age = form.age.value;
     const color = form.favoriteColor.value;
     
     const list = document.createElement('ul');
-    
     list.appendChild(renderListItem(`Name: ${userName}`));
     list.appendChild(renderListItem(`Age: ${age}`));
     list.appendChild(renderListItem(`Favorite Color: `, color));
    
     users.appendChild(list);
+}
 
+const handleSubmit = function (event) {
+    event.preventDefault();
+    const form = event.target;
+    renderList(form);
     form.reset();
     form.userName.focus();
 }
