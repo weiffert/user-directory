@@ -9,11 +9,22 @@ const renderColor = function(color) {
     return box;
 }
 
-const renderListItem = function(content, color) {
+const renderProfile = function(data) {
+    const box = document.createElement('div');
+    box.classList.add('profile');
+    box.style.backgroundImage = `url(${data})`;
+    return box;
+}
+
+const renderListItem = function(content, data) {
     const item = document.createElement('li');
     item.textContent = content;
-    if(color){
-        item.appendChild(renderColor(color));
+    if(data){
+        if(data[0] === '#')
+            item.appendChild(renderColor(data));
+        else {
+            item.appendChild(renderProfile(data));
+        }
     }
     return item;
 }
@@ -23,8 +34,10 @@ const renderList = function(form) {
     const userName = form.userName.value;
     const age = form.age.value;
     const color = form.favoriteColor.value;
+    const url = form.profile.value;
     
     const list = document.createElement('ul');
+    list.appendChild(renderListItem('', url));
     list.appendChild(renderListItem(`Name: ${userName}`));
     list.appendChild(renderListItem(`Age: ${age}`));
     list.appendChild(renderListItem(`Favorite Color: `, color));

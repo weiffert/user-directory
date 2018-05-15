@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    text-align: center;
 }
 
 h1, form, p {
@@ -15,8 +16,12 @@ ul {
 
 li {
     list-style-type: none;
+    margin: 0.25rem;
 }
 
 div.profile {
-
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    margin: auto;
 }
