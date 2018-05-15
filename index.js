@@ -4,9 +4,9 @@ const handleSubmit = function(event) {
     const form = event.target;
     event.preventDefault();
     const users = document.querySelector('#users');
-    users.innerHTML += `<p>
-        ${form.userName.value}, ${form.age.value}
-        <\p>`;
+    const userName = form.userName.value;
+    const age = form.age.value;
+    users.innerHTML += `<p>${userName}, ${age}<\p>`;
     form.reset();
     form.userName.focus();
 }
