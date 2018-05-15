@@ -1,3 +1,22 @@
 body {
     font-family: sans-serif;
 }
+
+h1, form, p {
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+div.profile {
+
+}

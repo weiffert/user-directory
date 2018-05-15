@@ -28,8 +28,10 @@ const renderList = function(form) {
     list.appendChild(renderListItem(`Name: ${userName}`));
     list.appendChild(renderListItem(`Age: ${age}`));
     list.appendChild(renderListItem(`Favorite Color: `, color));
-   
+    list.style.border = `.25rem solid ${color}`;
+
     users.appendChild(list);
+    
 }
 
 const handleSubmit = function (event) {
