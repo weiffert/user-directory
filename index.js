@@ -13,20 +13,22 @@ const handleSubmit = function (event) {
     const nameItem = document.createElement('li');
     nameItem.textContent = `Name: ${userName}`;
     list.appendChild(nameItem);
+    
     const ageItem = document.createElement('li');
     ageItem.textContent = `Age: ${age}`;
     list.appendChild(ageItem);
+   
     const colorItem = document.createElement('li');
     colorItem.textContent = `Favorite Color: `;
     list.appendChild(colorItem);
 
-    const box = document.createElement('div');
-    box.style.height='10px';
-    box.style.width='40px';
-    box.style.background=color;
-    box.style.display='inline-block';
+    const colorBox = document.createElement('div');
+    colorBox.style.height='10px';
+    colorBox.style.width='40px';
+    colorBox.style.background=color;
+    colorBox.style.display='inline-block';
 
-    colorItem.appendChild(box);
+    colorItem.appendChild(colorBox);
    
     users.appendChild(list);
 
