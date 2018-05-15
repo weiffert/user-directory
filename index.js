@@ -6,9 +6,17 @@ const handleSubmit = function (event) {
     const users = document.querySelector('#users');
     const userName = form.userName.value;
     const age = form.age.value;
+    const color = form.favoriteColor.value;
 
     const p = document.createElement('p');
+    const box = document.createElement('div');
+    box.style.height='20px';
+    box.style.width='20px';
+    box.style.background=color;
+    box.style.display='inline-block';
+
     p.textContent = `${userName}, ${age}`;
+    p.appendChild(box);
     users.appendChild(p);
 
     form.reset();
