@@ -1,5 +1,23 @@
 const form = document.querySelector('form#userForm');
 
+const renderColor = function(color) {
+    const box = document.createElement('div');
+    box.style.width = '2rem';
+    box.style.height = '1rem';
+    box.style.background = color;
+    box.style.display ='inline-block';
+    return box;
+}
+
+const renderListItem = function(content, color) {
+    const item = document.createElement('li');
+    item.textContent = content;
+    if(color){
+        item.appendChild(renderColor(color));
+    }
+    return item;
+}
+
 const handleSubmit = function (event) {
     event.preventDefault();
     const form = event.target;
@@ -10,25 +28,9 @@ const handleSubmit = function (event) {
     
     const list = document.createElement('ul');
     
-    const nameItem = document.createElement('li');
-    nameItem.textContent = `Name: ${userName}`;
-    list.appendChild(nameItem);
-    
-    const ageItem = document.createElement('li');
-    ageItem.textContent = `Age: ${age}`;
-    list.appendChild(ageItem);
-   
-    const colorItem = document.createElement('li');
-    colorItem.textContent = `Favorite Color: `;
-    list.appendChild(colorItem);
-
-    const colorBox = document.createElement('div');
-    colorBox.style.width = '2rem';
-    colorBox.style.height = '1rem';
-    colorBox.style.background = color;
-    colorBox.style.display ='inline-block';
-
-    colorItem.appendChild(colorBox);
+    list.appendChild(renderListItem(`Name: ${userName}`));
+    list.appendChild(renderListItem(`Age: ${age}`));
+    list.appendChild(renderListItem(`Favorite Color: `, color));
    
     users.appendChild(list);
 
