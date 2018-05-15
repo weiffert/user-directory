@@ -23,10 +23,10 @@ const handleSubmit = function (event) {
     list.appendChild(colorItem);
 
     const colorBox = document.createElement('div');
-    colorBox.style.height='10px';
-    colorBox.style.width='40px';
-    colorBox.style.background=color;
-    colorBox.style.display='inline-block';
+    colorBox.style.width = '2rem';
+    colorBox.style.height = '1rem';
+    colorBox.style.background = color;
+    colorBox.style.display ='inline-block';
 
     colorItem.appendChild(colorBox);
    
