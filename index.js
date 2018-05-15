@@ -9,7 +9,6 @@ const handleSubmit = function(event) {
         <\p>`;
     form.reset();
     form.userName.focus();
-    
 }
 
 form.addEventListener('submit', handleSubmit);
