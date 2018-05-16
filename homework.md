@@ -31,3 +31,15 @@ Add multiple headings to the page, and make the button change the _second_ one.
 ### Super Mega Bonus Credit Hyper Fighting
 
 * Be strong! Do not resore to the use of `innerHTML`. Keep using `document.createElement`.
+
+## Day 3
+
+Make a list of your favorite somethings.
+
+### Bonus Credit
+
+Not just add to a list, but add to an array.
+
+### Super Mega Bonus Credit
+
+Add a remove button for each individual item.
