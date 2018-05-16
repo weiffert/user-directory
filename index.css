@@ -14,6 +14,7 @@ form#userForm {
     background-color: #eee;
     border: 0.25rem solid #aaa;
     padding: 1rem;
+    margin-left: 1rem;
 }
 
 h1, form, p {
@@ -24,6 +25,7 @@ dl {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 0.25rem;
+    display: inline-block;
 }
 
 dl li {
