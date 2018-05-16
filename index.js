@@ -1,8 +1,5 @@
 const userList = [];
 
-const userForm = document.querySelector('form#userForm');
-const filterForm = document.querySelector('form#filterForm');
-
 const renderColor = function (color) {
     const box = document.createElement('div');
     box.style.width = '2rem';
@@ -69,11 +66,16 @@ const handleSubmit = function (event) {
 }
 
 const appendList = function (userList) {
-    console.log(userList);
     const users = document.querySelector('#users');
     userList.forEach(function (user) {
         users.appendChild(renderList(user));
     });
+}
+
+const removeAllChildren = function(parent) {
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.children[0]);
+    }
 }
 
 const handleFilter = function (event) {
@@ -82,9 +84,7 @@ const handleFilter = function (event) {
     const value = form.filter.value;
     const users = document.querySelector('div#users');
 
-    while (users.children.length > 0) {
-        users.removeChild(users.children[0]);
-    }
+    removeAllChildren(users);
     users.appendChild(form);
 
     if (value === '')
@@ -96,5 +96,20 @@ const handleFilter = function (event) {
             }));
 }
 
+const handleResetFilter = function(event) {
+    event.preventDefault();
+    const form = event.target;
+
+    const users = document.querySelector('div#users');
+    removeAllChildren(users);
+    users.appendChild(form);
+    
+    appendList(userList);
+}
+
+const userForm = document.querySelector('form#userForm');
+const filterForm = document.querySelector('form#filterForm');
+
 userForm.addEventListener('submit', handleSubmit);
 filterForm.addEventListener('submit', handleFilter);
+filterForm.addEventListener('reset', handleResetFilter);
