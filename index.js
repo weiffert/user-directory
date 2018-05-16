@@ -1,4 +1,7 @@
-const form = document.querySelector('form#userForm');
+const userList = [];
+
+const userForm = document.querySelector('form#userForm');
+const filterForm = document.querySelector('form#filterForm');
 
 const renderColor = function(color) {
     const box = document.createElement('div');
@@ -56,6 +59,7 @@ const handleSubmit = function (event) {
         'Age': form.age.value,
         'Favorite Color': renderColor(form.favoriteColor.value),
     }
+    userList.push(user);
 
     const users = document.querySelector('#users');
     users.appendChild(renderList(user));
@@ -64,4 +68,26 @@ const handleSubmit = function (event) {
     form.userName.focus();
 }
 
-form.addEventListener('submit', handleSubmit);
+const handleFilter = function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const value = form.filter.value;
+    const users = document.querySelector('div#users');
+    
+    while(users.children.length > 0) {
+        users.removeChild(users.children[0]);
+    }
+    users.appendChild(form);
+    
+    appendList(userList);
+}
+
+const appendList = function(userList) {
+    const users = document.querySelector('#users');
+    userList.forEach(function(user) {
+        users.appendChild(renderList(user));
+    });
+}
+
+userForm.addEventListener('submit', handleSubmit);
+filterForm.addEventListener('submit', handleFilter);
