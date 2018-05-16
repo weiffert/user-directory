@@ -18,17 +18,22 @@ const renderProfile = function(data) {
 
 const renderListItem = function(label, value) {
     const item = document.createElement('li');
-    item.textContent = label.length > 0 ? `${label}: ` : '';
+    const dt = document.createElement('dt');
+    const dd = document.createElement('dd');
+
+    dt.textContent = label.length > 0 ? `${label}: ` : '';
     try {
-        item.appendChild(value);
+        dd.appendChild(value);
     } catch(error) {
-        item.textContent += value;
+        dd.textContent += value;
     }
+    item.appendChild(dt);
+    item.appendChild(dd);
     return item;
 }
 
 const renderList = function(data) {
-    const list = document.createElement('ul');
+    const list = document.createElement('dl');
     list.style.border = `.25rem solid ${data['Favorite Color'].style.background}`;
     
     const keys = Object.keys(data);
