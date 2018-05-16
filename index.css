@@ -21,15 +21,22 @@ h1, form, p {
 }
 
 dl {
-    /*display: inline-block;*/
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 0.25rem;
 }
 
-li {
-    list-style-type: none;
+dl li {
+    list-style: none;
     margin: 0.25rem;
+}
+
+dt, dd {
+    display: inline;
+}
+
+dl:nth-of-type(even) {
+    background-color: whitesmoke;
 }
 
 div.profile {
