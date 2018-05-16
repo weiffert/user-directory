@@ -72,7 +72,7 @@ const appendList = function (userList) {
     });
 }
 
-const removeAllChildren = function(parent) {
+const removeAllChildren = function (parent) {
     while (parent.children.length > 0) {
         parent.removeChild(parent.children[0]);
     }
@@ -87,23 +87,20 @@ const handleFilter = function (event) {
     removeAllChildren(users);
     users.appendChild(form);
 
-    // if (value === '')
-    //     appendList(userList);
-    // else
-        appendList(
-            userList.filter(function (user) {
-                return user['Name'].indexOf(value) >= 0;
-            }));
+    appendList(
+        userList.filter(function (user) {
+            return user['Name'].indexOf(value) >= 0;
+        }));
 }
 
-const handleResetFilter = function(event) {
+const handleResetFilter = function (event) {
     event.preventDefault();
     const form = event.target;
 
     const users = document.querySelector('div#users');
     removeAllChildren(users);
     users.appendChild(form);
-    
+
     appendList(userList);
 }
 
