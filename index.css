@@ -21,7 +21,7 @@ form#userForm {
     margin-left: 1rem;
 }
 
-button {
+form#filterForm button {
     margin: 0 1rem;
 }
 
