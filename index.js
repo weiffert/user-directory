@@ -29,18 +29,22 @@ const renderListItem = function(label, value) {
 
 const renderList = function(form) {
     const users = document.querySelector('#users');
-    const userName = form.userName.value;
-    const age = form.age.value;
-    const color = form.favoriteColor.value;
-    const colorDiv = renderColor(color);
-    const profile = renderProfile(form.profile.value);
+    const user = {
+        profile: renderProfile(form.profile.value),
+        name: form.userName.value,
+        age: form.age.value,
+        color: renderColor(form.favoriteColor.value),
+    }
     
     const list = document.createElement('ul');
-    list.appendChild(renderListItem('', profile));
-    list.appendChild(renderListItem(`Name`, userName));
-    list.appendChild(renderListItem(`Age`, age));
-    list.appendChild(renderListItem(`Favorite Color`, colorDiv));
-    list.style.border = `.25rem solid ${color}`;
+    list.style.border = `.25rem solid ${form.favoriteColor.value}`;
+    
+    Object.keys(user).map(key => {
+        list.appendChild(renderListItem(
+            key === 'profile' ? '' : key, 
+            user[key]
+        ));
+    });
 
     users.appendChild(list);
 }
