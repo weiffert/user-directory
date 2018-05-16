@@ -27,32 +27,34 @@ const renderListItem = function(label, value) {
     return item;
 }
 
-const renderList = function(form) {
-    const users = document.querySelector('#users');
-    const user = {
-        profile: renderProfile(form.profile.value),
-        name: form.userName.value,
-        age: form.age.value,
-        color: renderColor(form.favoriteColor.value),
-    }
-    
+const renderList = function(data) {
     const list = document.createElement('ul');
-    list.style.border = `.25rem solid ${form.favoriteColor.value}`;
+    list.style.border = `.25rem solid ${data['Favorite Color'].style.background}`;
     
-    Object.keys(user).map(key => {
+    const keys = Object.keys(data);
+    keys.filter(key => {
         list.appendChild(renderListItem(
-            key === 'profile' ? '' : key, 
-            user[key]
+            key === keys[0] ? '' : key, 
+            data[key]
         ));
     });
-
-    users.appendChild(list);
+    return list;
 }
 
 const handleSubmit = function (event) {
     event.preventDefault();
     const form = event.target;
-    renderList(form);
+
+    const user = {
+        'Profile': renderProfile(form.profile.value),
+        'Name': form.userName.value,
+        'Age': form.age.value,
+        'Favorite Color': renderColor(form.favoriteColor.value),
+    }
+
+    const users = document.querySelector('#users');
+    users.appendChild(renderList(user));
+
     form.reset();
     form.userName.focus();
 }
