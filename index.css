@@ -24,4 +24,5 @@ div.profile {
     width: 5rem;
     border-radius: 100%;
     margin: auto;
+    background-size: cover;
 }
