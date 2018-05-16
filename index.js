@@ -87,9 +87,9 @@ const handleFilter = function (event) {
     removeAllChildren(users);
     users.appendChild(form);
 
-    if (value === '')
-        appendList(userList);
-    else
+    // if (value === '')
+    //     appendList(userList);
+    // else
         appendList(
             userList.filter(function (user) {
                 return user['Name'].indexOf(value) >= 0;
