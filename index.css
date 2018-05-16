@@ -25,4 +25,5 @@ div.profile {
     border-radius: 100%;
     margin: auto;
     background-size: cover;
+    background-position: center;
 }
