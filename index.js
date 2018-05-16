@@ -32,7 +32,7 @@ const renderList = function(data) {
     list.style.border = `.25rem solid ${data['Favorite Color'].style.background}`;
     
     const keys = Object.keys(data);
-    keys.filter(key => {
+    keys.forEach(key => {
         list.appendChild(renderListItem(
             key === keys[0] ? '' : key, 
             data[key]
