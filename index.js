@@ -89,7 +89,7 @@ const handleFilter = function (event) {
 
     appendList(
         userList.filter(function (user) {
-            return user['Name'].indexOf(value) >= 0;
+            return user['Name'].toUpperCase().indexOf(value.toUpperCase()) >= 0;
         }));
 }
 
