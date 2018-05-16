@@ -16,15 +16,13 @@ const renderProfile = function(data) {
     return box;
 }
 
-const renderListItem = function(content, data) {
+const renderListItem = function(label, value) {
     const item = document.createElement('li');
-    item.textContent = content;
-    if(data){
-        if(data[0] === '#')
-            item.appendChild(renderColor(data));
-        else {
-            item.appendChild(renderProfile(data));
-        }
+    item.textContent = label.length > 0 ? `${label}: ` : '';
+    try {
+        item.appendChild(value);
+    } catch(error) {
+        item.textContent += value;
     }
     return item;
 }
@@ -34,17 +32,17 @@ const renderList = function(form) {
     const userName = form.userName.value;
     const age = form.age.value;
     const color = form.favoriteColor.value;
-    const url = form.profile.value;
+    const colorDiv = renderColor(color);
+    const profile = renderProfile(form.profile.value);
     
     const list = document.createElement('ul');
-    list.appendChild(renderListItem('', url));
-    list.appendChild(renderListItem(`Name: ${userName}`));
-    list.appendChild(renderListItem(`Age: ${age}`));
-    list.appendChild(renderListItem(`Favorite Color: `, color));
+    list.appendChild(renderListItem('', profile));
+    list.appendChild(renderListItem(`Name`, userName));
+    list.appendChild(renderListItem(`Age`, age));
+    list.appendChild(renderListItem(`Favorite Color`, colorDiv));
     list.style.border = `.25rem solid ${color}`;
 
     users.appendChild(list);
-    
 }
 
 const handleSubmit = function (event) {
