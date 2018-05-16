@@ -30,7 +30,7 @@ form#filterForm {
     justify-content: center;
 }
 
-form#filterForm input {
+form#filterForm p {
     align-self: center;
 }
 
