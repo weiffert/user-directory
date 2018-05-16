@@ -10,11 +10,20 @@ main {
     justify-content: space-around;
 }
 
+div#users {
+    margin: 1rem;
+}
+
 form#userForm {
     background-color: #eee;
     border: 0.25rem solid #aaa;
     padding: 1rem;
     margin-left: 1rem;
+}
+
+form#filterForm {
+    display: flex;
+    justify-content: center;
 }
 
 h1, form, p {
