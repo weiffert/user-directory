@@ -1,14 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Dosis', sans-serif;
     text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+form#userForm {
+    background-color: #eee;
+    border: 0.25rem solid #aaa;
+    padding: 1rem;
 }
 
 h1, form, p {
     text-align: center;
 }
 
-ul {
-    display: inline-block;
+dl {
+    /*display: inline-block;*/
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 0.25rem;
