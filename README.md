@@ -1,7 +1,5 @@
 # User Directory
 
-The first project in Xtern Bootcamp 2018.
+The first project in Xtern Bootcamp 2018: simple list representation of user inputed data.
 
-This project demonstrates the following:
-
-* Handling events in JavaScript.
+Languages: HTML, CSS, JS
